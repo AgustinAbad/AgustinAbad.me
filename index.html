@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>PortFolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- vertical sidebar -->
+    <nav id="sidebar">
+        <ul>
+            <li><a href="#inicio" class="active" aria-label="Inicio"><span class="icon">▶</span><span class="text">Inicio</span></a></li>
+            <li><a href="#tecnologias" aria-label="Tecnologías"><span class="icon">⚙</span><span class="text">Tecnologías</span></a></li>
+            <li><a href="#proyectos" aria-label="Proyectos"><span class="icon">⚒</span><span class="text">Proyectos</span></a></li>
+            <li><a href="#contacto" aria-label="Contacto"><span class="icon">✉</span><span class="text">Contacto</span></a></li>
+        </ul>
+    </nav>
+    <!-- theme switch placed separately -->
+    <div id="theme-switch" aria-label="cambiar tema" tabindex="0"></div>
+
+    <!-- full‑screen background canvas -->
+    <canvas id="bg"></canvas>
+
+    <!-- main content area -->
+    <main>
+        <section id="inicio">
+            <h1>Agustín Abad</h1>
+            <h2>Estudiante de Ingeniería en Computación</h2>
+        </section>
+
+        <section id="tecnologias">
+            <h2>Tecnologías</h2>
+            <div class="tech-container">
+                <div class="glass-card">
+                    <h3>Lenguajes de Programación</h3>
+                    <ul>
+                        <li>JavaScript</li>
+                        <li>Python</li>
+                        <li>C / C++</li>
+                        <li>HTML / CSS</li>
+                    </ul>
+                </div>
+                <div class="glass-card">
+                    <h3>Bases de Datos</h3>
+                    <ul>
+                        <li>MySQL</li>
+                    </ul>
+                </div>
+                <div class="glass-card">
+                    <h3>Herramientas & SO</h3>
+                    <ul>
+                        <li>Git / GitHub</li>
+                        <li>Linux / Windows</li>
+                        <li>VS Code</li>
+                    </ul>
+                </div>
+                <div class="glass-card">
+                    <h3>Conceptos</h3>
+                    <ul>
+                        <li>OOP</li>
+                        <li>Git / Control de Versiones</li>
+                        <li>Algoritmos & Estructuras</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="proyectos">
+            <h2>Proyectos</h2>
+            <div class="projects-container">
+                <div class="glass-card">
+                    <h3>Proyecto de Gestión</h3>
+                    <p>Aplicación web para gestionar tareas y proyectos. Desarrollada con React, Node.js y PostgreSQL.</p>
+                    <div class="tech-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">PostgreSQL</span>
+                    </div>
+                </div>
+                <div class="glass-card">
+                    <h3>Portfolio Web</h3>
+                    <p>Sitio web interactivo personal con animaciones y diseño responsivo. Utiliza Three.js y GSAP para efectos visuales.</p>
+                    <div class="tech-tags">
+                        <span class="tag">Three.js</span>
+                        <span class="tag">GSAP</span>
+                        <span class="tag">CSS</span>
+                    </div>
+                </div>
+                <div class="glass-card">
+                    <h3>API REST</h3>
+                    <p>Servicio API escalable para aplicaciones móviles. Implementa autenticación JWT y documentación con Swagger.</p>
+                    <div class="tech-tags">
+                        <span class="tag">Express</span>
+                        <span class="tag">JWT</span>
+                        <span class="tag">Swagger</span>
+                    </div>
+                </div>
+                <div class="glass-card">
+                    <h3>Sistema de Chat</h3>
+                    <p>Aplicación de mensajería en tiempo real con salas públicas y privadas. Usa WebSockets para comunicación instantánea.</p>
+                    <div class="tech-tags">
+                        <span class="tag">WebSockets</span>
+                        <span class="tag">MongoDB</span>
+                        <span class="tag">Vue.js</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <div class="contact-container">
+                <div class="glass-card contact-card">
+                    <h3>📧 Email</h3>
+                    <p><a href="mailto:agustin@example.com">agustin.abad@example.com</a></p>
+                </div>
+                <div class="glass-card contact-card">
+                    <h3>👨‍💻 GitHub</h3>
+                    <p><a href="https://github.com/usuario" target="_blank">github.com/usuario</a></p>
+                </div>
+                <div class="glass-card contact-card">
+                    <h3>🔗 LinkedIn</h3>
+                    <p><a href="https://linkedin.com/in/usuario" target="_blank">linkedin.com/in/usuario</a></p>
+                </div>
+                <div class="glass-card contact-card">
+                    <h3>📱 Teléfono</h3>
+                    <p><a href="tel:+598XXXXXXX">+598 XXXX XXXX</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- script to highlight active section -->
+    <script>
+        const sections = document.querySelectorAll('main section');
+        const navLinks = document.querySelectorAll('#sidebar a');
+
+        function changeActiveLink() {
+            let index = sections.length;
+            while(--index && window.scrollY + 60 < sections[index].offsetTop) {}
+            navLinks.forEach(link => link.classList.remove('active'));
+            navLinks[index].classList.add('active');
+        }
+
+        changeActiveLink();
+        window.addEventListener('scroll', changeActiveLink);
+    </script>
+    <!-- behaviour scripts -->
+    <script src="https://unpkg.com/three@0.148.0/build/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="background.js"></script>
+    <script src="sidebar.js"></script>
+    <script src="theme.js"></script>
+</body>
+</html>
